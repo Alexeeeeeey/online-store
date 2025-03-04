@@ -19,7 +19,7 @@ const Shop = observer(() => {
       device.setDevices(data.rows);
       device.setTotalCount(data.count);
     });
-  }, []);
+  }, [device]);
 
   // Второй useEffect: обновление устройств при изменении страницы, типа или бренда
   useEffect(() => {
@@ -27,7 +27,7 @@ const Shop = observer(() => {
       device.setDevices(data.rows);
       device.setTotalCount(data.count);
     });
-  }, [device.page, device.selectedType, device.selectedBrand]); // Зависимости
+  }, [device, device.page, device.selectedType, device.selectedBrand]); // Зависимости
 
   return (
     <Container>
